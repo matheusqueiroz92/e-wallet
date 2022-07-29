@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.valor-cambio {
+  display: inline-flex;
+}
+
+.header-info {
+  display: inline-flex;
+}

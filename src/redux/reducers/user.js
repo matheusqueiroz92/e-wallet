@@ -3,6 +3,8 @@ import { ADD_USER } from '../actions';
 
 const INITIAL_STATE = {
   email: '',
+  valor: 0,
+  cambio: 'BRL',
 };
 
 function user(state = INITIAL_STATE, action) {
