@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import WalletForm from '../components/WalletForm';
 
 class Wallet extends React.Component {
   render() {
@@ -7,19 +8,7 @@ class Wallet extends React.Component {
       <div>
         <div>TrybeWallet</div>
         <Header />
-        <form>
-          <label htmlFor="valor">
-            Valor:
-            <input
-              type="number"
-              name="valor"
-              id="valor"
-              value="valor"
-              onChange={ () => {} }
-              data-testid="attr1-input"
-            />
-          </label>
-        </form>
+        <WalletForm />
       </div>
     );
   }
