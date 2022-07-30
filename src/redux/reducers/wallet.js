@@ -7,7 +7,6 @@ import {
 
 const INITIAL_STATE = {
   currencies: [],
-  loading: false,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {

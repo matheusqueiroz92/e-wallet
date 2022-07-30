@@ -2,10 +2,9 @@ const currenciesAPI = async () => {
   const url = 'https://economia.awesomeapi.com.br/json/all';
   const response = await fetch(url);
   const json = await response.json();
-  console.log(json);
   return json;
 };
-// Coloque aqui suas actions
+
 export const SAVE_EMAIL = 'SAVE_EMAIL';
 
 export const REQUEST_CURRENCIES = 'REQUEST_CURRENCIES';
@@ -23,9 +22,9 @@ export const requestCurrencies = () => ({
   type: REQUEST_CURRENCIES,
 });
 
-export const receiveCurrenciesOk = ({ currencies }) => ({
+export const receiveCurrenciesOk = (currencies) => ({
   type: RECEIVE_CURRENCIES_OK,
-  currencies,
+  currencies: (Object.keys(currencies)).filter((elem) => (elem !== 'USDT')),
 });
 
 export const receiveCurrenciesError = (error) => ({
@@ -39,7 +38,6 @@ export function fetchCurrencies() {
     dispatch(requestCurrencies());
     try {
       const response = await currenciesAPI();
-      console.log(response);
       dispatch(receiveCurrenciesOk(response));
     } catch (error) {
       dispatch(receiveCurrenciesError(error));
