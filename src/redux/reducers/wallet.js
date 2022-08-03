@@ -2,11 +2,16 @@
 import {
   REQUEST_CURRENCIES,
   RECEIVE_CURRENCIES_OK,
+  RECEIVE_CURRENCIES_FORM,
   RECEIVE_CURRENCIES_ERROR,
+  SAVE_WALLET_FORM,
 } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
+  exchangeRates: [],
+  expenses: [],
+  currency: 'BRL',
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -20,10 +25,20 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       currencies: action.currencies,
     };
+  case RECEIVE_CURRENCIES_FORM:
+    return {
+      ...state,
+      exchangeRates: action.exchangeRates,
+    };
   case RECEIVE_CURRENCIES_ERROR:
     return {
       ...state,
       error: action.error,
+    };
+  case SAVE_WALLET_FORM:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.expenses],
     };
   default:
     return state;

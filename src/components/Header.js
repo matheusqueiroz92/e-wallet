@@ -4,21 +4,29 @@ import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
-    const { email, valor, cambio } = this.props;
+    const { email, expenses } = this.props;
+
+    const mapExchange = (expenses.map((el) => {
+      const { currency, exchangeRates, value } = el;
+      return (exchangeRates[currency].ask) * value;
+    })).reduce((acc, curr) => acc + curr, 0);
     return (
       <div className="header-info">
-        <div>
+        <div className="e-mail">
           <p data-testid="email-field">
             { `E-mail: ${email}` }
+            &nbsp;
           </p>
         </div>
         <div className="valor-cambio">
-          <p data-testid="total-field">
-            { `Despesa Total: R$ ${valor}` }
-            &nbsp;
+          <p>
+            Despesa Total: R$
+            <span data-testid="total-field">
+              { mapExchange.toFixed(2) }
+            </span>
           </p>
           <p data-testid="header-currency-field">
-            { `${cambio}` }
+            BRL
           </p>
         </div>
       </div>
@@ -27,15 +35,19 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  email: PropTypes.string.isRequired,
-  valor: PropTypes.number.isRequired,
-  cambio: PropTypes.string.isRequired,
-};
+  email: PropTypes.string,
+  ask: PropTypes.array,
+  expenses: PropTypes.array,
+  exchangeRates: PropTypes.array,
+  currency: PropTypes.string,
+}.isRequired;
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
-  valor: state.user.valor,
-  cambio: state.user.cambio,
+  expenses: state.wallet.expenses,
+  currency: state.wallet.currency,
+  exchangeRates: state.wallet.exchangeRates,
+  ask: state.wallet.ask,
 });
 
 export default connect(mapStateToProps)(Header);

@@ -15,7 +15,7 @@ class Login extends React.Component {
     };
   }
 
-  handleChange = ({ target }) => {
+  handleChangeLogin = ({ target }) => {
     const { name, value } = target;
     this.setState({ [name]: value }, this.validateInputs);
   }
@@ -50,10 +50,12 @@ class Login extends React.Component {
         <div className="title-login">Login</div>
         <form className="form-login">
           <label htmlFor="username">
-            Usuário
+            Usuário:
+            {' '}
             <input
+              className="text-input"
               type="text"
-              onChange={ this.handleChange }
+              onChange={ this.handleChangeLogin }
               value={ username }
               name="username"
               id="username"
@@ -61,10 +63,12 @@ class Login extends React.Component {
             />
           </label>
           <label htmlFor="password">
-            Senha
+            {' '}
+            Senha:
             <input
+              className="text-input"
               type="password"
-              onChange={ this.handleChange }
+              onChange={ this.handleChangeLogin }
               value={ password }
               name="password"
               id="password"

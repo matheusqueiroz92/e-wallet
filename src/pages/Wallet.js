@@ -41,10 +41,15 @@ class Wallet extends React.Component {
 
 Wallet.propTypes = {
   getCurrencies: PropTypes.func,
+  expenses: PropTypes.array,
 }.isRequired;
+
+const mapStateToProps = (state) => ({
+  expenses: state.wallet.expenses,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   getCurrencies: () => dispatch(fetchCurrencies()),
 });
 
-export default connect(null, mapDispatchToProps)(Wallet);
+export default connect(mapStateToProps, mapDispatchToProps)(Wallet);

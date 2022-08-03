@@ -14,8 +14,60 @@ code {
 
 .valor-cambio {
   display: inline-flex;
+  margin-left: 30px;
+  color: white
+}
+
+.e-mail {
+  display: inline-flex;
+  color: white;
 }
 
 .header-info {
   display: inline-flex;
+  background-color: rgb(63, 131, 63);
+  width: 100%;
+}
+
+table, th, td {
+  border:1px solid black;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+.title-login {
+  background-color:rgb(63, 131, 63);
+  color: white;
+  font-size: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+.form-login {
+  width: 40%;
+}
+
+.password {
+  margin-left: 3px;
+}
+
+.text-input {
+  width: 175px;
+}
+
+.form {
+  margin-top: 10px;
+}
+
+.button {
+  margin-top: 5px;
 }
