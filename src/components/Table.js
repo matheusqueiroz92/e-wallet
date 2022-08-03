@@ -26,7 +26,7 @@ class Table extends Component {
             <tbody>
               <tr>
                 <td>
-                  { expenses[0] }
+                  { expenses }
                 </td>
                 <td>
                   { expenses }
