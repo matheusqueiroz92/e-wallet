@@ -22,7 +22,7 @@ describe('Testa o componente WalletForm', () => {
     renderWithRedux(<WalletForm />)
 
     const description = screen.getAllByText(/descrição/i);
-    const tag = screen.getAllByText(/categoria/i);
+    const tag = screen.getAllByText(/tag/i);
     const method = screen.getAllByText(/método de pagamento/i);
     const value = screen.getAllByText(/valor/i);
     const coin = screen.getAllByText(/moeda/i);
