@@ -10,6 +10,7 @@ class WalletForm extends Component {
   constructor() {
     super();
     this.state = {
+      id: '',
       value: '',
       currency: 'USD',
       method: 'Dinheiro',
@@ -27,8 +28,6 @@ class WalletForm extends Component {
     const { saveWalletFormDispatch } = this.props;
     saveWalletFormDispatch(this.state);
     this.setState({
-      id: '',
-      nameCurrencies: '',
       value: '',
       currency: 'USD',
       method: 'Dinheiro',
