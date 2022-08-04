@@ -11,7 +11,6 @@ const INITIAL_STATE = {
   currencies: [],
   exchangeRates: [],
   expenses: [],
-  currency: 'BRL',
 };
 
 const wallet = (state = INITIAL_STATE, action) => {

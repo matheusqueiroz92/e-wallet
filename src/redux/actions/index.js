@@ -51,6 +51,7 @@ export function fetchCurrencies() {
     dispatch(requestCurrencies());
     try {
       const response = await currenciesAPI();
+      console.log(response);
       dispatch(receiveCurrenciesOk(response));
     } catch (error) {
       dispatch(receiveCurrenciesError(error));

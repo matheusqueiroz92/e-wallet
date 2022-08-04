@@ -28,6 +28,7 @@ class WalletForm extends Component {
     saveWalletFormDispatch(this.state);
     this.setState({
       id: '',
+      nameCurrencies: '',
       value: '',
       currency: 'USD',
       method: 'Dinheiro',
