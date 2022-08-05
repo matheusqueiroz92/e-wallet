@@ -45,46 +45,53 @@ class Login extends React.Component {
   render() {
     const { username, password, disableButton, redirect } = this.state;
     return (
-      <div>
+      <div className="card-content">
         { redirect && <Redirect from="/" to="/carteira" />}
-        <div className="title-login">Login</div>
+        <div className="card-title">
+          <img src="https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Carteira-de-Dinheiro-PNG-1024x1024.png" className="img-carteira" alt="carteira" width="90" height="80" />
+          <h2>TrybeWallet</h2>
+        </div>
         <form className="form-login">
-          <label htmlFor="username">
-            Usuário:
-            {' '}
-            <input
-              className="text-input"
-              type="text"
-              onChange={ this.handleChangeLogin }
-              value={ username }
-              name="username"
-              id="username"
-              data-testid="email-input"
-            />
-          </label>
-          <label htmlFor="password">
-            {' '}
-            Senha:
-            <input
-              className="text-input"
-              type="password"
-              onChange={ this.handleChangeLogin }
-              value={ password }
-              name="password"
-              id="password"
-              data-testid="password-input"
-            />
-          </label>
+          <div className="card-login">
+            <h3>LOGIN</h3>
+            <label htmlFor="username">
+              Usuário:
+              <input
+                className="input-usuario"
+                type="email"
+                placeholder="digite seu e-mail"
+                onChange={ this.handleChangeLogin }
+                value={ username }
+                name="username"
+                id="username"
+                data-testid="email-input"
+              />
+            </label>
+            <label htmlFor="password">
+              Senha:
+              <input
+                className="input-senha"
+                type="password"
+                placeholder="digite sua senha"
+                onChange={ this.handleChangeLogin }
+                value={ password }
+                name="password"
+                id="password"
+                data-testid="password-input"
+              />
+            </label>
+          </div>
+          <button
+            type="button"
+            className="button-login"
+            disabled={ disableButton }
+            name="login-button"
+            id="login-button"
+            onClick={ this.sendAction }
+          >
+            Entrar
+          </button>
         </form>
-        <button
-          type="submit"
-          disabled={ disableButton }
-          name="login-button"
-          id="login-button"
-          onClick={ this.sendAction }
-        >
-          Entrar
-        </button>
       </div>
     );
   }

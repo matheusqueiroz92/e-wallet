@@ -15,6 +15,7 @@ class Header extends Component {
         <div className="e-mail">
           <p data-testid="email-field">
             E-mail:
+            &nbsp;
             { email }
             &nbsp;
           </p>
@@ -27,6 +28,7 @@ class Header extends Component {
             </span>
           </p>
           <p data-testid="header-currency-field">
+            &nbsp;
             BRL
           </p>
         </div>

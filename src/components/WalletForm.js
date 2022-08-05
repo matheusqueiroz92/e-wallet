@@ -47,7 +47,7 @@ class WalletForm extends Component {
   }
 
   render() {
-    const { currencies, expenses } = this.props;
+    const { currencies } = this.props;
     const { value, currency, method, tag, description } = this.state;
     return (
       <div>
@@ -111,7 +111,7 @@ class WalletForm extends Component {
             Descrição:
             <textarea
               type="text-area"
-              rows="2"
+              rows="1"
               name="description"
               id="description"
               value={ description }
@@ -122,14 +122,14 @@ class WalletForm extends Component {
         </form>
         <button
           className="button"
-          type="submit"
+          type="button"
           name="buttonAdd"
           id="buttonAdd"
           onClick={ this.sendWalletForm }
         >
           Adicionar despesa
         </button>
-        <Table expenses={ expenses } />
+        <Table />
       </div>
     );
   }

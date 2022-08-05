@@ -17,6 +17,8 @@ export const RECEIVE_CURRENCIES_FORM = 'RECEIVE_CURRENCIES_FORM';
 
 export const RECEIVE_CURRENCIES_ERROR = 'RECEIVE_CURRENCIES_ERROR';
 
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+
 export const saveEmail = (payload) => ({
   type: SAVE_EMAIL,
   payload,
@@ -25,6 +27,11 @@ export const saveEmail = (payload) => ({
 export const saveWalletForm = (expenses) => ({
   type: SAVE_WALLET_FORM,
   expenses,
+});
+
+export const deleteExpense = (expensesSelected) => ({
+  type: DELETE_EXPENSE,
+  expensesSelected,
 });
 
 export const requestCurrencies = () => ({
