@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { saveEmail } from '../redux/actions';
+import carteira from '../carteira.png';
 
 class Login extends React.Component {
   constructor() {
@@ -48,7 +49,13 @@ class Login extends React.Component {
       <div className="card-content">
         { redirect && <Redirect from="/" to="/carteira" />}
         <div className="card-title">
-          <img src="https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/04/Carteira-de-Dinheiro-PNG-1024x1024.png" className="img-carteira" alt="carteira" width="90" height="80" />
+          <img
+            src={ carteira }
+            className="img-carteira"
+            alt="carteira"
+            width="90"
+            height="80"
+          />
           <h2>TrybeWallet</h2>
         </div>
         <form className="form-login">
